@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyPaws</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            background-color: rgb(176, 176, 202);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        @media screen and (max-width:400px) {
+            body{
+                background-color: rgb(213, 98, 56);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+           
+            
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        nav a{
+            font-size: large;
+            text-decoration: none;
+            color: yellow;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: 540;
+        }
+        nav{
+            background-color: brown;
+            word-spacing: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: sticky;
+            top: 0px;
+            height: 25px;
+        }
+        nav a:hover{
+            color: green;
+        }
+
+    
+        .maincontainer{
+            display: flex;
+            gap: 40px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 1px solid white;
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px 10px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .first{
+            min-height: 180px;
+            width: 200px;
+        }
+        .image{
+            height: 150px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid;
+        }
+        .first h1{
+            font-size: 25px;
+            font-weight: 600;
+            color: brown;
+        }
+    
+        section{
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        section h1{
+            text-align: center;
+            color: brown;
+            margin-bottom: 20px;
+        }
+        section h2{
+            color: brown;
+            margin-bottom: 8px;
+        }
+        section p{
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .about-item{
+            margin-bottom: 20px;
+        }
+        .about-row{
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .abt{
+            height: 120px;
+            width: 160px;
+            border-radius: 5px;
+        }
+        #about ul{
+            margin-left: 25px;
+            line-height: 1.6;
+        }
+
+    
+        .blog{
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid grey;
+        }
+        .blog-row{
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .blog-img{
+            height: 140px;
+            width: 220px;
+            border-radius: 5px;
+        }
+        .blog-text{
+            flex: 1;
+        }
+        .blog ul{
+            margin-left: 25px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        
+        .contact-details p{
+            margin-bottom: 8px;
+        }
+
+        
+        footer{
+            background-color: brown;
+            color: yellow;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer p{
+            margin: 5px 0;
+        }
+        footer a{
+            color: yellow;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover{
+            color: lightgreen;
+        }
+        .social a{
+            font-size: 25px;
+        }
+
+        
+        .whatsapp{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background-color: green;
+            color: white;
+            font-size: 32px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .call{
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background-color: blue;
+            color: white;
+            font-size: 28px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .whatsapp:hover, .call:hover{
+            background-color: brown;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Blog</a>
+        <a href="">Contact</a>
+    </nav>
+
+
+<div class="maincontainer" id="home">
+    <div class="first">
+        <img src=".//dogphotos/dog1.jpg" class="image">
+        <h1 class="breed">Pomeranian</h1>
+        <p><b>Price:</b><del>₹50000</del>₹20000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog2.jpg" class="image">
+        <h1 class="breed">Siberian Husky</h1>
+        <p><b>Price:</b><del>₹60000</del>₹30000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog3.jpg" class="image">
+        <h1 class="breed">Pug</h1>
+        <p><b>Price:</b><del>₹40000</del>₹18000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog4.jpg" class="image">
+        <h1 class="breed">Poodle</h1>
+        <p><b>Price:</b><del>₹55000</del>₹25000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog5.jpg" class="image">
+        <h1 class="breed">Bernese</h1>
+        <p><b>Price:</b><del>₹65000</del>₹32000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog6.jpg" class="image">
+        <h1 class="breed">Doberman Pinscher</h1>
+        <p><b>Price:</b><del>₹50000</del>₹24000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog7.jpg" class="image">
+        <h1 class="breed">Swiss Shepherd</h1>
+        <p><b>Price:</b><del>₹80000</del>₹42000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog8.jpg" class="image">
+        <h1 class="breed">German Shepherd</h1>
+        <p><b>Price:</b><del>₹55000</del>₹28000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog9.jpg" class="image">
+        <h1 class="breed">Golden Retriever</h1>
+        <p><b>Price:</b><del>₹45000</del>₹20000</p>
+    </div>
+    <div class="first">
+        <img src=".//dogphotos/dog10.jpg" class="image">
+        <h1 class="breed">Jack Russell Terrier</h1>
+        <p><b>Price:</b><del>₹40000</del>₹18000</p>
+    </div>
+</div>
+
+
+<section id="about">
+    <h1>About HappyPaws</h1>
+
+    <div class="about-item">
+        <h2>Who We Are</h2>
+        <div class="about-row">
+            <img src=".//dogphotos/about1.jpg" class="abt">
+            <p>Welcome to HappyPaws! We are passionate about dogs and believe that every dog deserves a loving and caring home. Our goal is to help dog lovers discover different breeds and find a companion that matches their lifestyle.</p>
+        </div>
+    </div>
+
+    <div class="about-item">
+        <h2>Our Mission</h2>
+        <div class="about-row">
+            <img src=".//dogphotos/about2.jpg" class="abt">
+            <p>Our mission is to make finding the right dog simple and enjoyable. We provide information about different dog breeds, their characteristics, and their prices to help visitors make informed decisions.</p>
+        </div>
+    </div>
+
+    <div class="about-item">
+        <h2>Our Commitment</h2>
+        <div class="about-row">
+            <img src=".//dogphotos/about3.jpg" class="abt">
+            <p>We believe responsible pet ownership starts with proper care, attention, nutrition, and regular veterinary checkups. We encourage every dog owner to provide a safe and loving environment for their pet.</p>
+        </div>
+    </div>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+        <li>Dog lovers' community</li>
+        <li>Breed information and pricing</li>
+        <li>Responsible pet ownership</li>
+    </ul>
+</section>
+
+
+<section id="blog">
+    <h1>HappyPaws Blog</h1>
+
+    
+    <div class="blog">
+        <h2>A Simple Daily Routine for Your Dog</h2>
+        <div class="blog-row">
+            <img src=".//dogphotos/blog1.jpg" class="blog-img">
+            <div class="blog-text">
+                <p>Dogs love routine. Knowing what happens and when makes them feel safe, and it helps reduce barking, chewing and anxiety. Here is an easy daily schedule you can start with:</p>
+                <ul>
+                    <li><b>Morning:</b> Potty break, a 20-30 minute walk, then breakfast.</li>
+                    <li><b>Midday:</b> Fresh water, a short potty break and some playtime or training.</li>
+                    <li><b>Evening:</b> Another walk, dinner, and some time to play with the family.</li>
+                    <li><b>Night:</b> Last potty break and a quiet, comfortable place to sleep.</li>
+                </ul>
+                <p>Puppies need more frequent meals and potty breaks, while older dogs may prefer gentler, shorter walks. Adjust the routine to your dog's age and breed.</p>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="blog">
+        <h2>Deworming Schedule for Puppies and Adult Dogs</h2>
+        <div class="blog-row">
+            <img src=".//dogphotos/blog2.jpg" class="blog-img">
+            <div class="blog-text">
+                <p>Worms are very common in dogs, especially puppies, and many puppies are born with them. Regular deworming keeps your dog healthy and also protects your family. A general guide is below:</p>
+                <ul>
+                    <li><b>2 to 8 weeks old:</b> every 2 weeks.</li>
+                    <li><b>2 to 6 months old:</b> once a month.</li>
+                    <li><b>6 months and above:</b> every 3 months.</li>
+                </ul>
+                <p>Signs of worms include a pot belly, weight loss, vomiting, loose stools and a dull coat. Always use medicine and doses recommended by your vet, because the dose depends on your dog's weight. This list is only a general guide.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog">
+        <h2>Basic Feeding and Care Tips for Your Dog</h2>
+        <div class="blog-row">
+            <img src=".//dogphotos/blog3.jpg" class="blog-img">
+            <div class="blog-text">
+                <p>A healthy dog starts with good food and regular care. Keep these basics in mind:</p>
+                <ul>
+                    <li>Feed a balanced dog food suited to your dog's age. Avoid chocolate, grapes, onions and sweets, which are harmful to dogs.</li>
+                    <li>Puppies eat 3-4 small meals a day. Adult dogs usually do well with 2 meals.</li>
+                    <li>Always keep clean drinking water available.</li>
+                    <li>Brush the coat regularly and give a bath once every few weeks.</li>
+                    <li>Keep vaccinations up to date and visit the vet for regular checkups.</li>
+                </ul>
+                <p>Most importantly, give your dog time, love and attention. A happy dog is a healthy dog!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact">
+    <h1>Contact Us</h1>
+    <div class="contact-details">
+        <p><i class="fa fa-map-marker"></i> <b>Address:</b> HappyPaws,Fountain Road Kharadi, Pune, Maharashtra  PIN- 411014</p>
+        <p><i class="fa fa-phone"></i> <b>Phone:</b> +91 9856743434</p>
+        <p><i class="fa fa-envelope"></i> <b>Email:</b> yourdogs@happypaws.com</p>
+        <p><i class="fa fa-clock-o"></i> <b>Working Hours:</b> Monday to Saturday, 10:00 AM - 7:00 PM (Sunday closed)</p>
+    </div>
+</section>
+
+<footer>
+    <h2>HappyPaws</h2>
+    <p>Helping dog lovers find their perfect companion.</p>
+    <p>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Blog</a>
+        <a href="">Contact</a>
+    </p>
+
+    
+    <p class="social">
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+    </p>
+
+    <p>&copy; 2026 HappyPaws. All rights reserved.</p>
+</footer>
+
+
+<a href="tel:+919856743434" class="call"><i class="fa fa-phone"></i></a>
+
+
+<a href="https://wa.me/919856743434" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+
+</body>
+</html>
