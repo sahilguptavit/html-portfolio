@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyPaws</title>
+
+  <!-- Bootstrap 5 CSS and JS (the JS bundle makes the mobile menu work) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Font Awesome icons (same as the original site) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    :root{
+      --brown:#7b2e18;
+      --brown-dark:#5c2010;
+      --gold:#f6c343;
+      --page:#eceaf4;
+    }
+    html{scroll-behavior:smooth;scroll-padding-top:70px}
+    body{background-color:var(--page);color:#2b2530}
+    h1,h2,h3,h4,h5{font-family:Georgia,'Times New Roman',Times,serif;color:var(--brown)}
+
+    /* Navbar */
+    .navbar{background-color:var(--brown)}
+    .navbar-brand{color:var(--gold);font-family:Georgia,serif;font-weight:700}
+    .navbar .nav-link{color:var(--gold);font-size:1.1rem}
+    .navbar .nav-link:hover{color:#fff}
+
+    /* Hero */
+    .hero{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:#fff;padding:60px 0;text-align:center}
+    .hero h1{color:var(--gold);font-size:calc(2.2rem + 1.5vw)}
+
+    /* Section headings and panels */
+    section{padding:50px 0}
+    .section-title{text-align:center;margin-bottom:35px}
+    .section-title::after{content:"";display:block;width:70px;height:4px;background:var(--gold);margin:12px auto 0;border-radius:2px}
+    .panel{background:#fff;border-radius:12px;padding:30px;box-shadow:0 4px 14px rgba(60,30,20,.08)}
+
+    /* Dog cards */
+    .dog-card{border:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(60,30,20,.1);transition:transform .2s,box-shadow .2s}
+    .dog-card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(60,30,20,.18)}
+    .dog-card img{height:200px;object-fit:cover}
+    .price del{color:#8a8290}
+    .price .now{color:var(--brown);font-size:1.25rem;font-weight:700}
+    .btn-paw{background-color:var(--brown);border-color:var(--brown);color:var(--gold)}
+    .btn-paw:hover{background-color:var(--gold);border-color:var(--gold);color:var(--brown-dark)}
+
+    /* About and blog images */
+    .about-img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+    .blog-card{border:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(60,30,20,.08)}
+    .blog-card img{height:100%;min-height:220px;object-fit:cover;width:100%}
+
+    /* Contact */
+    .contact-list i{color:var(--brown);width:28px}
+
+    /* Footer */
+    footer{background-color:var(--brown);color:var(--gold)}
+    footer a{color:var(--gold);text-decoration:none}
+    footer a:hover{color:#fff}
+    .social a{font-size:1.7rem}
+
+    /* Floating buttons */
+    .float-btn{position:fixed;right:20px;width:55px;height:55px;border-radius:50%;color:#fff;font-size:1.7rem;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:1030;transition:transform .2s}
+    .float-btn:hover{color:#fff;transform:scale(1.12)}
+    .whatsapp{bottom:20px;background-color:#25a244}
+    .call{bottom:90px;background-color:#1f6feb}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><i class="fa fa-paw"></i> HappyPaws</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="menu">
+        <ul class="navbar-nav gap-md-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <header class="hero" id="home">
+    <div class="container">
+      <h1>HappyPaws</h1>
+      <p class="lead mb-4">Helping dog lovers find their perfect companion.</p>
+      <a href="#dogs" class="btn btn-lg btn-warning">Meet our dogs</a>
+    </div>
+  </header>
+
+  <!-- DOG LISTINGS -->
+  <section id="dogs">
+    <div class="container-xxl">
+      <h2 class="section-title">Our Dogs</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-5 g-4">
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog1.jpg" class="card-img-top" alt="Pomeranian">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹30,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Pomeranian</h3>
+              <p class="card-text small text-secondary">Small, fluffy and lively. Loves attention and adapts well to apartment living.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹50,000</del> <span class="now">₹20,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Pomeranian" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog2.jpg" class="card-img-top" alt="Siberian Husky">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹30,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Siberian Husky</h3>
+              <p class="card-text small text-secondary">Energetic, friendly and playful with a thick double coat. Needs plenty of daily exercise.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹60,000</del> <span class="now">₹30,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Siberian%20Husky" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog3.jpg" class="card-img-top" alt="Pug">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹22,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Pug</h3>
+              <p class="card-text small text-secondary">Small, sturdy and affectionate. Easygoing with families and needs only light exercise.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹40,000</del> <span class="now">₹18,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Pug" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog4.jpg" class="card-img-top" alt="Poodle">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹30,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Poodle</h3>
+              <p class="card-text small text-secondary">Intelligent and easy to train, with a low-shedding curly coat. Active and eager to learn.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹55,000</del> <span class="now">₹25,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Poodle" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog5.jpg" class="card-img-top" alt="Bernese">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹33,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Bernese</h3>
+              <p class="card-text small text-secondary">Large, calm and gentle. A loyal family dog that needs space and regular grooming.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹65,000</del> <span class="now">₹32,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Bernese" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog6.jpg" class="card-img-top" alt="Doberman Pinscher">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹26,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Doberman Pinscher</h3>
+              <p class="card-text small text-secondary">Loyal, alert and athletic. Intelligent and best with regular training and exercise.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹50,000</del> <span class="now">₹24,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Doberman%20Pinscher" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog7.jpg" class="card-img-top" alt="Swiss Shepherd">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹38,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Swiss Shepherd</h3>
+              <p class="card-text small text-secondary">Large, gentle and loyal, with a white double coat. Smart, active and good with family.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹80,000</del> <span class="now">₹42,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Swiss%20Shepherd" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog8.jpg" class="card-img-top" alt="German Shepherd">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹27,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">German Shepherd</h3>
+              <p class="card-text small text-secondary">Confident, smart and loyal. Learns fast and needs daily exercise and training.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹55,000</del> <span class="now">₹28,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20German%20Shepherd" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog9.jpg" class="card-img-top" alt="Golden Retriever">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹25,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Golden Retriever</h3>
+              <p class="card-text small text-secondary">Friendly, gentle and eager to please. A popular family dog that enjoys play and regular grooming.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹45,000</del> <span class="now">₹20,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Golden%20Retriever" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card dog-card h-100">
+            <div class="position-relative">
+              <img src="dogphotos/dog10.jpg" class="card-img-top" alt="Jack Russell Terrier">
+              <span class="badge text-bg-warning position-absolute top-0 end-0 m-2">Save ₹22,000</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Jack Russell Terrier</h3>
+              <p class="card-text small text-secondary">Small but fearless and full of energy. Playful, clever and needs lots of activity.</p>
+              <p class="price mt-auto mb-3"><b>Price:</b> <del>₹40,000</del> <span class="now">₹18,000</span></p>
+              <a href="https://wa.me/919856743434?text=Hi%20HappyPaws%2C%20I%20am%20interested%20in%20the%20Jack%20Russell%20Terrier" target="_blank" rel="noopener" class="btn btn-paw"><i class="fa fa-whatsapp"></i> Enquire now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About HappyPaws</h2>
+      <div class="panel">
+
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-md-4"><img src="dogphotos/about1.jpg" class="about-img" alt="Who we are"></div>
+          <div class="col-md-8">
+            <h3 class="h4">Who We Are</h3>
+            <p class="mb-0">Welcome to HappyPaws! We are passionate about dogs and believe that every dog deserves a loving and caring home. Our goal is to help dog lovers discover different breeds and find a companion that matches their lifestyle.</p>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-md-4 order-md-2"><img src="dogphotos/about2.jpg" class="about-img" alt="Our mission"></div>
+          <div class="col-md-8 order-md-1">
+            <h3 class="h4">Our Mission</h3>
+            <p class="mb-0">Our mission is to make finding the right dog simple and enjoyable. We provide information about different dog breeds, their characteristics, and their prices to help visitors make informed decisions.</p>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-md-4"><img src="dogphotos/about3.jpg" class="about-img" alt="Our commitment"></div>
+          <div class="col-md-8">
+            <h3 class="h4">Our Commitment</h3>
+            <p class="mb-0">We believe responsible pet ownership starts with proper care, attention, nutrition, and regular veterinary checkups. We encourage every dog owner to provide a safe and loving environment for their pet.</p>
+          </div>
+        </div>
+
+        <h3 class="h4">Why Choose Us?</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa fa-paw text-warning"></i> Dog lovers' community</li>
+          <li class="list-group-item"><i class="fa fa-paw text-warning"></i> Breed information and pricing</li>
+          <li class="list-group-item"><i class="fa fa-paw text-warning"></i> Responsible pet ownership</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="container">
+      <h2 class="section-title">HappyPaws Blog</h2>
+
+      <div class="card blog-card mb-4">
+        <div class="row g-0">
+          <div class="col-md-4"><img src="dogphotos/blog1.jpg" alt="Dog daily routine"></div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h3 class="h4 card-title">A Simple Daily Routine for Your Dog</h3>
+              <p>Dogs love routine. Knowing what happens and when makes them feel safe, and it helps reduce barking, chewing and anxiety. Here is an easy daily schedule you can start with:</p>
+              <ul>
+                <li><b>Morning:</b> Potty break, a 20-30 minute walk, then breakfast.</li>
+                <li><b>Midday:</b> Fresh water, a short potty break and some playtime or training.</li>
+                <li><b>Evening:</b> Another walk, dinner, and some time to play with the family.</li>
+                <li><b>Night:</b> Last potty break and a quiet, comfortable place to sleep.</li>
+              </ul>
+              <p class="mb-0">Puppies need more frequent meals and potty breaks, while older dogs may prefer gentler, shorter walks. Adjust the routine to your dog's age and breed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card blog-card mb-4">
+        <div class="row g-0">
+          <div class="col-md-4"><img src="dogphotos/blog2.jpg" alt="Deworming schedule"></div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h3 class="h4 card-title">Deworming Schedule for Puppies and Adult Dogs</h3>
+              <p>Worms are very common in dogs, especially puppies, and many puppies are born with them. Regular deworming keeps your dog healthy and also protects your family. A general guide is below:</p>
+              <ul>
+                <li><b>2 to 8 weeks old:</b> every 2 weeks.</li>
+                <li><b>2 to 6 months old:</b> once a month.</li>
+                <li><b>6 months and above:</b> every 3 months.</li>
+              </ul>
+              <p class="mb-0">Signs of worms include a pot belly, weight loss, vomiting, loose stools and a dull coat. Always use medicine and doses recommended by your vet, because the dose depends on your dog's weight. This list is only a general guide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card blog-card">
+        <div class="row g-0">
+          <div class="col-md-4"><img src="dogphotos/blog3.jpg" alt="Feeding and care tips"></div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h3 class="h4 card-title">Basic Feeding and Care Tips for Your Dog</h3>
+              <p>A healthy dog starts with good food and regular care. Keep these basics in mind:</p>
+              <ul>
+                <li>Feed a balanced dog food suited to your dog's age. Avoid chocolate, grapes, onions and sweets, which are harmful to dogs.</li>
+                <li>Puppies eat 3-4 small meals a day. Adult dogs usually do well with 2 meals.</li>
+                <li>Always keep clean drinking water available.</li>
+                <li>Brush the coat regularly and give a bath once every few weeks.</li>
+                <li>Keep vaccinations up to date and visit the vet for regular checkups.</li>
+              </ul>
+              <p class="mb-0">Most importantly, give your dog time, love and attention. A happy dog is a healthy dog!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="panel mx-auto" style="max-width:720px">
+        <ul class="list-unstyled contact-list mb-0 fs-5">
+          <li class="mb-3"><i class="fa fa-map-marker"></i> <b>Address:</b> HappyPaws, Fountain Road Kharadi, Pune, Maharashtra PIN- 411014</li>
+          <li class="mb-3"><i class="fa fa-phone"></i> <b>Phone:</b> <a href="tel:+919856743434">+91 9856743434</a></li>
+          <li class="mb-3"><i class="fa fa-envelope"></i> <b>Email:</b> <a href="mailto:yourdogs@happypaws.com">yourdogs@happypaws.com</a></li>
+          <li><i class="fa fa-clock-o"></i> <b>Working Hours:</b> Monday to Saturday, 10:00 AM - 7:00 PM (Sunday closed)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5 text-center">
+    <div class="container">
+      <h2 class="h3 text-warning">HappyPaws</h2>
+      <p>Helping dog lovers find their perfect companion.</p>
+      <p>
+        <a href="#home" class="mx-2">Home</a>
+        <a href="#about" class="mx-2">About</a>
+        <a href="#blog" class="mx-2">Blog</a>
+        <a href="#contact" class="mx-2">Contact</a>
+      </p>
+      <p class="social">
+        <a href="https://www.facebook.com/" class="mx-2" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="mx-2" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" class="mx-2" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+      </p>
+      <p class="mb-0">&copy; 2026 HappyPaws. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating call and WhatsApp buttons -->
+  <a href="tel:+919856743434" class="float-btn call" aria-label="Call HappyPaws"><i class="fa fa-phone"></i></a>
+  <a href="https://wa.me/919856743434" target="_blank" rel="noopener" class="float-btn whatsapp" aria-label="Chat on WhatsApp"><i class="fa fa-whatsapp"></i></a>
+
+</body>
+</html>
